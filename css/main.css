@@ -45,11 +45,10 @@ ul.posts {
 ul.posts li {
     list-style: none;
 }
-a.postTitle h1.postTitle h3.postTitle {
+a.postTitle h1.postTitle h3.postTitle .postTitle{
   text-decoration: none;
   color: black;
   margin: none;
-  -webkit-margin-after: 0em;
 }
 .postDate {
     color: #999;
