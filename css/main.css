@@ -50,7 +50,7 @@ ul.posts li {
   color: black;
   margin: none;
 }
-.postDate p.postDate{
+.postDate {
     color: #999;
     font-size: 80%;
 }
