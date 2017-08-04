@@ -14,11 +14,10 @@ nav ul li, footer ul li {
 }
 .subtitle {
     font-style: italic;
-    font-size: 60%;
+    font-size: 80%;
 }
 a {
     text-decoration: none;
-    color: #999;
 }
 a:hover {
     text-decoration: underline;
@@ -44,4 +43,11 @@ ul.posts {
 
 ul.posts li {
     list-style: none;
+}
+
+.postTitle {
+}
+
+.postDate {
+    color: #999;
 }

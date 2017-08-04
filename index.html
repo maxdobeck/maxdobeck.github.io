@@ -12,8 +12,8 @@ title: Maximum Code
   <h3>Recent Stuff</h3>
   <ul class="posts">
     {% for post in site.posts %}
-      <a href="{{ post.url }}" title="{{ post.title }}"><h3>{{ post.title }}</h3></a>
-      <li><span>{{ post.date | date_to_string }}</span> </li>
+      <a href="{{ post.url }}" title="{{ post.title }}"><h3 class="postTitle">{{ post.title }}</h3></a>
+      <li><span class="postDate">{{ post.date | date_to_string }}</span> </li>
     {% endfor %}
   </ul>
 </div>
