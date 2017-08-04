@@ -2,11 +2,12 @@ body {
     margin: 60px auto;
     width: 70%;
 }
-nav ul, footer ul {
+nav ul a, footer ul a {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     padding: 0px;
     list-style: none;
     font-weight: bold;
+    text-decoration: none;
 }
 nav ul li, footer ul li {
     display: inline;
@@ -19,13 +20,18 @@ nav ul li, footer ul li {
 }
 a {
     color: black;
-    text-decoration: none;
-}
-a:hover {
     text-decoration: underline;
 }
-a:visited, a.postTitle:visited h1.postTitle:visited {
+a:visited {
     color:black;
+}
+.postTitle a {
+    color: black;
+    text-decoration: underline;
+}
+.postTitle a:visited {
+    color:#999;
+    text-decoration: underline;
 }
 h1 {
     font-size: 3em;
@@ -52,12 +58,14 @@ ul.posts {
 ul.posts li {
     list-style: none;
 }
-.postTitle a.postTitle h1.postTitle h3.postTitle {
+.postTitle h1.postTitle h3.postTitle {
   text-decoration: none;
   color: black;
   margin: none;
+  margin-bottom: 0em;
 }
 .postDate {
     color: #999;
     font-size: 80%;
+    margin-top: 0em;
 }

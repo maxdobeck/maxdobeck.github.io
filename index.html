@@ -11,7 +11,7 @@ title: Maximum Code
 <div>
   <ul class="posts">
     {% for post in site.posts %}
-      <a href="{{ post.url }}" title="{{ post.title }}"><h3 class="postTitle">{{ post.title }}</h3></a>
+      <a href="{{ post.url }}" title="{{ post.title }}" class="postTitle"><h3>{{ post.title }}</h3></a>
       <li><span class="postDate">{{ post.date | date_to_string }}</span> </li>
     {% endfor %}
   </ul>
