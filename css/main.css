@@ -23,7 +23,7 @@ a {
 a:hover {
     text-decoration: underline;
 }
-a:visited {
+a:visited, a.postTitle:visited h1.postTitle:visited {
     color:black;
 }
 h1 {
