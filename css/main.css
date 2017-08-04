@@ -18,13 +18,6 @@ nav ul li, footer ul li {
     font-size: .99em;
     margin-top: .1em;
 }
-a {
-    color: black;
-    text-decoration: underline;
-}
-a:visited {
-    color:black;
-}
 a.postTitle {
     color: black;
     text-decoration: none;
@@ -32,6 +25,13 @@ a.postTitle {
 a.postTitle:visited {
     color:#999;
     text-decoration: none;
+}
+a {
+    color: black;
+    text-decoration: underline;
+}
+a:visited {
+    color:black;
 }
 h1 {
     font-size: 3em;
