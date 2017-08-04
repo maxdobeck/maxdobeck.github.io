@@ -45,9 +45,10 @@ ul.posts li {
     list-style: none;
 }
 
-.postTitle {
+a .postTitle {
 }
 
 .postDate {
     color: #999;
+    font-size: 80%;
 }
