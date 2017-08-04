@@ -45,7 +45,7 @@ ul.posts li {
     list-style: none;
 }
 
-.postTitle a h1 {
+a.postTitle h1.postTitle {
   text-decoration: none;
 }
 
