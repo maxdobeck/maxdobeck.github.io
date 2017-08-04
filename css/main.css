@@ -40,7 +40,7 @@ footer {
     font-size: .8em;
 }
 ul.posts { 
-    margin: 20px auto 10px; 
+    margin: 0px; 
     font-size: 1.5em;
 }
 ul.posts li {
@@ -49,10 +49,8 @@ ul.posts li {
 a.postTitle h1.postTitle {
   text-decoration: none;
   color: black;
-  padding: 0px;
 }
 .postDate {
     color: #999;
     font-size: 80%;
-    padding: 0px;
 }
