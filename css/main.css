@@ -16,9 +16,12 @@ nav ul li, footer ul li {
     font-style: italic;
     font-size: 80%;
 }
+
 a {
+    color: black;
     text-decoration: none;
 }
+
 a:hover {
     text-decoration: underline;
 }
