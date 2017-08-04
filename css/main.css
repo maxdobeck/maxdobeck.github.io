@@ -12,6 +12,9 @@ nav ul li, footer ul li {
     display: inline;
     margin-right: 20px;
 }
+.subtitle {
+    font-style: italic;
+}
 a {
     text-decoration: none;
     color: #999;
