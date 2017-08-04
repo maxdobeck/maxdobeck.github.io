@@ -49,6 +49,7 @@ a.postTitle h1.postTitle h3.postTitle {
   text-decoration: none;
   color: black;
   margin: none;
+  -webkit-margin-after: 0em;
 }
 .postDate {
     color: #999;
