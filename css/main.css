@@ -14,7 +14,7 @@ nav ul li, footer ul li {
 }
 .subtitle {
     font-style: italic;
-    font-size: .7em;
+    font-size: .99em;
 }
 a {
     color: black;
@@ -29,6 +29,9 @@ a:visited, a.postTitle:visited h1.postTitle:visited {
 h1 {
     font-size: 3em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
+}
+h3.author {
+  margin:none;
 }
 p {
     font-size: 1.5em;
