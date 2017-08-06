@@ -3,12 +3,16 @@ body {
     width: 70%;
     font-size: .9em;
 }
+nav ul, footer ul {
+    padding: 0px; 
+}
 nav ul a, footer ul a {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     padding: 0px;
     list-style: none;
     font-weight: bold;
     text-decoration: none;
+    font-size: 1.2em;
 }
 nav ul li, footer ul li {
     display: inline;
@@ -56,8 +60,8 @@ footer {
     font-size: .8em;
 }
 ul.posts { 
-    margin: 10px; 
     font-size: 1.5em;
+    padding: 0px;
 }
 ul.posts li {
     list-style: none;
@@ -65,11 +69,8 @@ ul.posts li {
 .postTitle h1.postTitle h3.postTitle {
   text-decoration: none;
   color: black;
-  margin: none;
   margin-bottom: 0em;
 }
 .postDate {
-    color: #ff944d;
     font-size: 80%;
-    margin-top: 0em;
 }
