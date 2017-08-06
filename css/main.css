@@ -1,6 +1,7 @@
 body {
     margin: 60px auto;
     width: 70%;
+    font-size: .9em;
 }
 nav ul a, footer ul a {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
@@ -28,6 +29,9 @@ a.postTitle:visited {
 }
 a {
     color: black;
+    text-decoration: underline;
+}
+a:hover {
     text-decoration: underline;
 }
 a:visited {
@@ -65,7 +69,7 @@ ul.posts li {
   margin-bottom: 0em;
 }
 .postDate {
-    color: #999;
+    color: #ff944d;
     font-size: 80%;
     margin-top: 0em;
 }

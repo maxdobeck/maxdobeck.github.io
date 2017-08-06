@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Creating This Blog with Jekyll"
+title: "creating this blog with jekyll"
 date: 2017-08-01
 ---
 
