@@ -5,6 +5,7 @@ body {
 }
 nav ul, footer ul {
     padding: 0px; 
+    margin: 0px;
 }
 nav ul a, footer ul a {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
@@ -45,6 +46,11 @@ h1 {
     font-size: 3em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     margin-bottom: 0em;
+    margin-top: 0em;
+}
+.blogTitle, .author {
+    clear: both;
+    display: inline;
 }
 .author {
   margin: 0em;
