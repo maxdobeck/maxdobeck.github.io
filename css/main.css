@@ -1,6 +1,6 @@
 body {
     margin: 60px auto;
-    width: 70%;
+    width: 50%;
     font-size: .9em;
     font-family: 'Raleway', 'Arial', 'Sans-Serif';
 }
@@ -41,6 +41,9 @@ nav ul li, footer ul li {
     color:#999;
     text-decoration: none;
 }
+.postStub {
+    font-size: 18px;
+}
 a {
     text-decoration: underline;
 }
@@ -74,8 +77,8 @@ footer {
     font-size: .8em;
 }
 .post {
-    font-size: 15px;
-    width: 85%;
+    font-size: 12px;
+    width: 90%;
     font-family: 'arial','serif';
     margin-top: 0em;
 }
