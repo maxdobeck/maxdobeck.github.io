@@ -12,6 +12,7 @@ title: Maximum Code
   <ul class="posts">
     {% for post in site.posts %}
       <a href="{{ post.url }}" title="{{ post.title }}" class="postTitle"><h3>{{ post.title }}</h3></a>
+      <p class="post">{{ post.content | truncatewords:42 | strip_html }}</p>
       <li><span class="postDate">{{ post.date | date_to_string }}</span> </li>
     {% endfor %}
   </ul>
