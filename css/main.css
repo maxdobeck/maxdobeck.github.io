@@ -1,6 +1,30 @@
+@media only screen and (max-device-width: 320px) and (max-device-width: 480px) {
+    body {
+        margin: 60px auto;
+        width: 100%;
+        font-size: .9em;
+        font-family: 'Raleway', 'Arial', 'Sans-Serif';   
+    }
+}
+@media only screen and (min-width: 321px) {
+    body {
+        margin: 60px auto;
+        width: 100%;
+        font-size: .9em;
+        font-family: 'Raleway', 'Arial', 'Sans-Serif';   
+    }
+}
+@media only screen and (max-width: 320px) {
+    body {
+        margin: 60px auto;
+        width: 100%;
+        font-size: .9em;
+        font-family: 'Raleway', 'Arial', 'Sans-Serif';   
+    }
+}
 body {
     margin: 60px auto;
-    width: 50%;
+    width: 60%;
     font-size: .9em;
     font-family: 'Raleway', 'Arial', 'Sans-Serif';
 }
