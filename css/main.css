@@ -1,4 +1,4 @@
-@media only screen and (max-device-width: 320px) and (max-device-width: 480px) {
+@media (max-device-width: 320px) and (max-device-width: 480px) {
     body {
         margin: 60px auto;
         width: 100%;
