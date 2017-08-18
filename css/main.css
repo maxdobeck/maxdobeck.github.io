@@ -1,7 +1,7 @@
 body {
     margin: 60px auto;
     width: 95%;
-    font-size: .9em;
+    font-size: .8em;
     font-family: 'Georgia','Raleway', 'Arial', 'Sans-Serif';
 }
 code {
@@ -78,7 +78,6 @@ footer {
 }
 .post {
     font-size: 12px;
-    font-family: 'arial','serif';
     margin-top: 0em;
 }
 ul.posts { 
@@ -97,7 +96,7 @@ ul.posts li {
   body {
     margin: 60px auto;
     width: 45%;
-    font-size: .9em;
+    font-size: .6em;
     font-family: 'Georgia','Raleway', 'Arial', 'Sans-Serif';
   }
 }
