@@ -17,7 +17,7 @@ Instead we sort of mush them all together  into one big file and manage the stat
 ## Why Rails? ##
 [The official Rails doc says it best](http://edgeguides.rubyonrails.org/api_app.html).
 
-First off I know it and I like it.  I like Ruby and Rails even though the *magic* can be a little too magical.  But that feeling means you probably need to stop what you're doing and read some docs/source code.  If you feel that things happen too automagikally at the command line just remind yourself that it doesn't need to be a ~rails generate ...~ command.  You can do all of it by hand.  You can type out those ~mkdir~ and ~touch~ commands all you want.  And you probably should.  But for an experiment into Rails 5 --api only mode this was a lot of fun.
+First off I know it and I like it.  I like Ruby and Rails even though the *magic* can be a little too magical.  But that feeling means you probably need to stop what you're doing and read some docs/source code.  If you feel that things happen too automagikally at the command line just remind yourself that it doesn't need to be a `rails generate ...` command.  You can do all of it by hand.  You can type out those `mkdir` and `touch` commands all you want.  And you probably should.  But for an experiment into Rails 5 --api only mode this was a lot of fun.
 
 Beyond the familiarity I can safely say that if you're building an API for the 2nd or 3rd time you'll *REALLY* start to feel the deja vu.  The business logic and names of resources are really the only things that change.  Beyond that you're always going to be putting up the same old skeleton and pumping life into it just like you did last time.
 
@@ -42,7 +42,7 @@ This is an excellent example of what most of the routes in your API will look li
 # Build Time ##
 
 ## Building the Front End ##
-Just use [create-react-app](https://github.com/facebookincubator/create-react-app). If you don't know what that is just accept its the easiest way to build react apps.  If you want to really learn how the sausage is made just find an old guide from 2014 and follow that.  Once you get to ~npm start~ and see that beatuiful spinning react symbol you're done with the front end!
+Just use [create-react-app](https://github.com/facebookincubator/create-react-app). If you don't know what that is just accept its the easiest way to build react apps.  If you want to really learn how the sausage is made just find an old guide from 2014 and follow that.  Once you get to `npm start` and see that beatuiful spinning react symbol you're done with the front end!
 
 ## Building the Back End ##
 This one's a little trickier if you haven't had any Rails experience BUT luckily we can start small and generate *just* enough code to return a simple JSON  message to the front end.
