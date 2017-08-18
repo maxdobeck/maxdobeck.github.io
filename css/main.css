@@ -5,8 +5,7 @@ body {
     font-family: 'Georgia','Raleway', 'Arial', 'Sans-Serif';
 }
 code {
-    background-color: lightgrey;
-    font-size: .9em;
+    background-color: #F4F8FF; 
 }
 footer ul li a{
     color: black;
