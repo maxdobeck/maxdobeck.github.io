@@ -20,6 +20,7 @@ nav ul a, footer ul a {
     font-weight: bold;
     text-decoration: none;
     font-size: 1.2em;
+    color: black;
 }
 nav ul li, footer ul li {
     display: inline;
