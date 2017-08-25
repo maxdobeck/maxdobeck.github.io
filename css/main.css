@@ -46,9 +46,11 @@ nav ul li, footer ul li {
 }
 a {
     text-decoration: underline;
+    text-decoration-color: black;
 }
 a:hover {
     text-decoration: underline;
+    text-decoration-color: black;
 }
 a:visited {
     text-decoration: none;
