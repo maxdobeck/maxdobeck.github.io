@@ -10,6 +10,9 @@ footer ul li a{
 .highlight {
     background-color: #f2f2f2;
 }
+pre.highlight {
+    overflow-y: scroll;
+}
 nav ul, footer ul {
     padding: 0px; 
     margin: 0px;
