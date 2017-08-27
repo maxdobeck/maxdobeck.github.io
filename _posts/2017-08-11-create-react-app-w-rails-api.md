@@ -27,6 +27,7 @@ Beyond the familiarity I can safely say that if you're building an API for the 2
 React sits on its own server farm or maybe just an AWS S3 bucket and responds to the user requests.  All requests relating to the business resources are sent to the API from the React client.  Because this is a truly RESTful implementation of an API the requests only need to know the bare minimum of the client state.  The API processes the client request and sends its response back to the source.  There's no need to store the Users session or state.  We may want to build a queue or cache to persist the user's state on the React front end so that they can pick up where they left off if they're interrupted but beyond that the API just exists and responds to requests.
 
 ### The 'ping' route: 'localhost:3000/api/v1/ping' ###
+
 ```ruby
 ../controllers/api/v1/ping_controller
 
