@@ -1,13 +1,14 @@
 body {
     margin: 60px auto;
     width: 95%;
+    font-size: .8em;
     font-family: 'Georgia','Raleway', 'Arial', 'Sans-Serif';
-}
-code {
-    background-color: #F4F8FF; 
 }
 footer ul li a{
     color: black;
+}
+.highlight {
+    background-color: #DBDBDB;
 }
 nav ul, footer ul {
     padding: 0px; 

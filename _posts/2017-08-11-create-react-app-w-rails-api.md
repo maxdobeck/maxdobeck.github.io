@@ -3,6 +3,7 @@ layout: post
 title: "create-react-app w/ rails 5 --api"
 date: 2017-08-11
 ---
+# The Concept #
 ## Abstract ##
 This is an alternative way of building web apps using an agnostic front end framework or client with a RESTful API on the application tier.  Essentially the front end is just delivered the data it needs, usually in the form of a JSON object, and the back end process simple discrete requests that alter the available resources.  From the viewpoint of the application there is no user state to capture beyond these moments that a network request is made to either the React server or the Rails server.
 
@@ -26,7 +27,7 @@ Beyond the familiarity I can safely say that if you're building an API for the 2
 React sits on its own server farm or maybe just an AWS S3 bucket and responds to the user requests.  All requests relating to the business resources are sent to the API from the React client.  Because this is a truly RESTful implementation of an API the requests only need to know the bare minimum of the client state.  The API processes the client request and sends its response back to the source.  There's no need to store the Users session or state.  We may want to build a queue or cache to persist the user's state on the React front end so that they can pick up where they left off if they're interrupted but beyond that the API just exists and responds to requests.
 
 ### The 'ping' route: 'localhost:3000/api/v1/ping' ###
-~~~ruby
+```ruby
 ../controllers/api/v1/ping_controller
 
 class Api::V1::PingController < ApplicationController
@@ -35,11 +36,11 @@ class Api::V1::PingController < ApplicationController
     render json: { message: "Hello and welcome to Helpdesk!" }, status: :ok 
   end
 end
-~~~
+```
 
 This is an excellent example of what most of the routes in your API will look like.  If this was a running server you would see the JSON message appear in the browser as a regular JSON object.  If you were a client device calling the API you would probably process the message somehow and make some changes to the client's state.  Or maybe just print it out.
 
-# Build Time ##
+# The Build ##
 
 ## Building the Front End ##
 Just use [create-react-app](https://github.com/facebookincubator/create-react-app). If you don't know what that is just accept its the easiest way to build react apps.  If you want to really learn how the sausage is made just find an old guide from 2014 and follow that.  Once you get to `npm start` and see that beatuiful spinning react symbol you're done with the front end!
