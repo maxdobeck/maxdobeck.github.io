@@ -9,6 +9,7 @@ footer ul li a{
 }
 .highlight {
     background-color: #f2f2f2;
+    padding: 10px;
 }
 pre.highlight {
     overflow-y: scroll;

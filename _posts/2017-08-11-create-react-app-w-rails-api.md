@@ -52,8 +52,10 @@ DELETE https://www.hotelApi.com/reservations/2017-08-25
 The method of the request is `DELETE`, the hostname is `www.hotelApi.com`, and the path(resource or URI) is `/reservations/2017-08-25`.  These components makeup the request header that React will send to our API.  In response to this request the API could return a `true` or `false`, a confirmation, or an error saying this user doesn't have access to a protected resource (it would be chaos if anyone could delete anyone else's hotel reservations).  If you reference other modern APIs though the typical thing to do is to return a JSON message.  Since this is a `DELETE` operation  it will probably just be a simple confirmation so that the React application can say something like, "Successfully deleted!".
 
 ## Generating an API ##
-The below assumes you have Rails 5 installed.  Lets build an API that can help us manage tickets submitted to the IT department.
+The below assumes you have Rails 5 installed along with Postgres.  Refer to this guide by Digital Ocean for instructions to [install RVM, Rails, and Postgres](https://www.digitalocean.com/community/tutorials/how-to-setup-ruby-on-rails-with-postgres).  Lets build an API that can help us manage tickets submitted to the IT department.
 
 ```
 $ rails new HelpdeskApi --api --database=postgresql
 ```
+
+To test that he server was built correctly lets turn the server on with `$ rails s`.  Then navigate to `localhost:3000` in your browser.  If you see a hello message from Rails you'll know that your API server was generated and is now actively responding to requests.  In the terminal you can see the responses 
