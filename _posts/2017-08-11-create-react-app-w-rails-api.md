@@ -24,7 +24,9 @@ Beyond the familiarity I can safely say that if you're building an API for the 2
 
 
 ## What does this look like? ##
-React sits on its own server farm or maybe just an AWS S3 bucket and responds to the user requests.  All requests relating to the business resources are sent to the API from the React client.  Because this is a truly RESTful implementation of an API the requests only need to know the bare minimum of the client state.  The API processes the client request and sends its response back to the source.  There's no need to store the Users session or state.  We may want to build a queue or cache to persist the user's state on the React front end so that they can pick up where they left off if they're interrupted but beyond that the API just exists and responds to requests.
+React sits on its own server or server farm and responds to users as they connect.  Whenever the user does something like a Save or Update to a resource an HTTP request gets sent to the API server.  The API processes the client request, interacts with some resource, and sends the response back to the source.  There's no need to store the Users session or state on the API server because this is a RESTful architecture that is stateless by design.
+
+We may want to use a queue or cache to persist the user's state on the React front end so that they can pick up where they left off if they're interrupted but beyond that the API just exists and responds to requests.  When we use the word stateless what we mean is that no single HTTP request from the client needs to know about any previous request.  All necessary data is contained within the HTTP request: authentication for protected resources, the location of the resource, and what we want to do with it.
 
 ### The 'ping' route: 'localhost:3000/api/v1/ping' ###
 
@@ -41,10 +43,21 @@ end
 
 This is an excellent example of what most of the routes in your API will look like.  If this was a running server you would see the JSON message appear in the browser as a regular JSON object.  If you were a client device calling the API you would probably process the message somehow and make some changes to the client's state.  Or maybe just print it out.
 
-# The Build ##
+# The Build #
 
 ## Building the Front End ##
-Just use [create-react-app](https://github.com/facebookincubator/create-react-app). If you don't know what that is just accept its the easiest way to build react apps.  If you want to really learn how the sausage is made just find an old guide from 2014 and follow that.  Once you get to `npm start` and see that beatuiful spinning react symbol you're done with the front end!
+For our front end application we'll use [create-react-app](https://github.com/facebookincubator/create-react-app). This is the easiest way to build react apps.  If you want to really learn how the sausage is made just find an old guide from 2014 and follow that.  If you followed the most recent guide to get your create-react-app app up and running you'll run `$ npm start` and see a brand new React application!
 
 ## Building the Back End ##
-This one's a little trickier if you haven't had any Rails experience BUT luckily we can start small and generate *just* enough code to return a simple JSON  message to the front end.
+Now we need to generate the Rails API using a few of Rail's builtin commands.  This will be somewhat similar to the create-react-app process in that you'll supply a name and a few optional paramaters to the command line.  But unlike the create-react-app we'll also be able to generate most of the resources we will use.  A resource here is defined as something that a user would be interested in creating, viewing, or modifying.  We can further define a resource as being the final path in the HTTP request to the API.  
+
+For example if we have an API that lets you make and modify hotel reservations and you wanted to delete your reservation it would look like: 
+
+`DELETE https://www.hotelApi.com/reservations/2017-08-25`.  
+
+The method of the request is `DELETE`, the hostname is `www.hotelApi.com`, and the path(resource or URI) is `/reservations/2017-08-25`.  These components makeup the request header that React will send to our API.  In response to this request the API could return a `true` or `false`, a confirmation, or an error saying this user doesn't have access to a protected resource (it would be chaos if anyone could delete anyone else's hotel reservations).  If you reference other modern APIs though the typical thing to do is to return a JSON message.  Since this is a `DELETE` operation  it will probably just be a simple confirmation so that the React application can say something like, "Successfully deleted!".
+
+### Generating an API ###
+The below assumes you have Rails 5 installed.
+
+`$ rails new TripPlannerApi --api --database=postgresql`
