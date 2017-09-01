@@ -7,14 +7,6 @@ date: 2017-08-11
 ## Abstract ##
 This is an alternative way of building web apps using an agnostic front end framework or client with a RESTful API on the application tier.  Essentially the front end is just delivered the data it needs, usually in the form of a JSON object, and the back end process simple discrete requests that alter the available resources.  From the viewpoint of the application there is no user state to capture beyond these moments that a network request is made to either the React server or the Rails server.
 
-## Why React? ##
-It doesn't rely on the standard method of having your three pillars of front end:
-- HTML file
-- Javascript file
-- CSS file
-
-Instead we sort of mush them all together  into one big file and manage the state by constantly re-rendering one big tree of elements.  I tried it and hated it at first but now I'm having fun!  It feels very natural to focus my energies on building reusable components instead of building out another template or getting that feeling of deja vu as I make a new form that feels *eerily* familiar.
-
 ## Why Rails? ##
 [The official Rails doc says it best](http://edgeguides.rubyonrails.org/api_app.html).
 
@@ -53,11 +45,15 @@ Now we need to generate the Rails API using a few of Rail's builtin commands.  T
 
 For example if we have an API that lets you make and modify hotel reservations and you wanted to delete your reservation it would look like: 
 
-`DELETE https://www.hotelApi.com/reservations/2017-08-25`.  
+```
+DELETE https://www.hotelApi.com/reservations/2017-08-25
+```  
 
 The method of the request is `DELETE`, the hostname is `www.hotelApi.com`, and the path(resource or URI) is `/reservations/2017-08-25`.  These components makeup the request header that React will send to our API.  In response to this request the API could return a `true` or `false`, a confirmation, or an error saying this user doesn't have access to a protected resource (it would be chaos if anyone could delete anyone else's hotel reservations).  If you reference other modern APIs though the typical thing to do is to return a JSON message.  Since this is a `DELETE` operation  it will probably just be a simple confirmation so that the React application can say something like, "Successfully deleted!".
 
-### Generating an API ###
-The below assumes you have Rails 5 installed.
+## Generating an API ##
+The below assumes you have Rails 5 installed.  Lets build an API that can help us manage tickets submitted to the IT department.
 
-`$ rails new TripPlannerApi --api --database=postgresql`
+```
+$ rails new HelpdeskApi --api --database=postgresql
+```
