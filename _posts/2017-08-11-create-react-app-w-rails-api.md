@@ -54,8 +54,21 @@ The method of the request is `DELETE`, the hostname is `www.hotelApi.com`, and t
 ## Generating an API ##
 The below assumes you have Rails 5 installed along with Postgres.  Refer to this guide by Digital Ocean for instructions to [install RVM, Rails, and Postgres](https://www.digitalocean.com/community/tutorials/how-to-setup-ruby-on-rails-with-postgres).  Lets build an API that can help us manage tickets submitted to the IT department.
 
+First setup the Database, in our case a [Postgres database](https://wiki.postgresql.org/wiki/Detailed_installation_guides).  You'll probably want to refer back to this and plan on taking an extra 30 minutes to locate all the shortcut commands you need.
+
+Tip:
+
+`
+psql=> \du  lists all the roles and their attributes
+`
+
 ```
 $ rails new HelpdeskApi --api --database=postgresql
 ```
 
-To test that he server was built correctly lets turn the server on with `$ rails s`.  Then navigate to `localhost:3000` in your browser.  If you see a hello message from Rails you'll know that your API server was generated and is now actively responding to requests.  In the terminal you can see the responses 
+To test that he server was built correctly lets turn the server on with `$ rails s`.  Then navigate to `localhost:3000` in your browser.  If you see a hello message from Rails you'll know that your API server was generated and is now actively responding to requests.  In the terminal you can see the requests from your browser and the responses that the Rails server is providing.  You can even see the errors!  Try going to the resouce `www.localhost.com:3000/fake-resource` and watch the beautiful error screen on the browser. Then learn to love it and study what you did wrong.
+
+You've officially setup a Rails API server and a React node server, now we have to get them talking to each other.
+
+## Preparing for the Cross Origin Resource Request or CORS. ##
+
