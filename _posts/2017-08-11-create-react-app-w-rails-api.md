@@ -58,9 +58,8 @@ First setup the Database, in our case a [Postgres database](https://wiki.postgre
 
 Tip:
 
-`
-psql=> \du  lists all the roles and their attributes
-`
+`psql=> \du`  lists all the roles and their attributes
+
 
 ```
 $ rails new HelpdeskApi --api --database=postgresql

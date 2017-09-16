@@ -14,8 +14,12 @@ footer ul li a{
 pre.highlight {
     overflow-y: scroll;
 }
-code {
-    background-color: lightgrey;
+p .highlighter-rouge {
+    background-color: #f2f2f2;
+    font-size: .8em;
+}
+.highlighter-rouge .highlight code {
+    font-size: 1em;
 }
 nav ul, footer ul {
     padding: 0px; 
