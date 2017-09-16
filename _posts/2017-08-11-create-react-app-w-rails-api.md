@@ -10,9 +10,9 @@ This is an alternative way of building web apps using an agnostic front end fram
 ## Why Rails? ##
 [The official Rails doc says it best](http://edgeguides.rubyonrails.org/api_app.html).
 
-First off I know it and I like it.  I like Ruby and Rails even though the *magic* can be a little too magical.  But that feeling means you probably need to stop what you're doing and read some docs/source code.  If you feel that things happen too automagikally at the command line just remind yourself that it doesn't need to be a `rails generate ...` command.  You can do all of it by hand.  You can type out those `mkdir` and `touch` commands all you want.  And you probably should.  But for an experiment into Rails 5 --api only mode this was a lot of fun.
+First off I know it and I like it.  I like Ruby and Rails even though the *magic* can be a little too magical.  But that feeling means you probably need to stop what you're doing and read some docs/source code.  If you feel that things happen too automagikally at the command line just remind yourself that it doesn't need to be a `rails generate ...` command.  You can do all of it by hand.  You can type out those `mkdir` and `touch` commands all you want.  And you probably should.  But for an experiment into Rails 5 --api only mode the automagick made testing fast, easy, and pleasant.
 
-Beyond the familiarity I can safely say that if you're building an API for the 2nd or 3rd time you'll *REALLY* start to feel the deja vu.  The business logic and names of resources are really the only things that change.  Beyond that you're always going to be putting up the same old skeleton and pumping life into it just like you did last time.
+I can safely say that if you're building an API for the 2nd or 3rd time you'll *REALLY* start to feel the deja vu.  The business logic and names of resources are really the only things that change.  Beyond that you're always going to be putting up the same old skeleton and pumping life into it just like you did last time.  So why not use Rails?
 
 
 ## What does this look like? ##
@@ -70,7 +70,22 @@ To test that he server was built correctly lets turn the server on with `$ rails
 
 You've officially setup a Rails API server and a React node server, now we have to get them talking to each other.
 
-
-
-
 ## Preparing for the Cross Origin Resource Request or CORS. ##
+This is assuming you're using Rack for your're middleware.  Read more about [Rack-CORS here](https://github.com/cyu/rack-cors).
+
+
+The Rails api server and the React server are technically going to be on different domains  this is a bit of a security issue since we don't know if we can trust other web service calls.  Since we're going to be passing HTTP requests to the rails server and sending data back in response we need to permit the Rails application to enable [Cross-Origin Resource Requests](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS) by default.  We know we can trust our React server we can enable CORS for the time being.
+
+Essentially we're going to uncomment what's in the `cors.rb` file and add a wildcard to the origin.
+```ruby
+# config/initializers/cors.rb
+Rails.application.config.middleware.insert_before 0, Rack::Cors do
+   allow do
+     origins '*'
+
+     resource '*',
+       headers: :any,
+       methods: [:get, :post, :put, :patch, :delete, :options, :head]
+   end
+ end
+```
