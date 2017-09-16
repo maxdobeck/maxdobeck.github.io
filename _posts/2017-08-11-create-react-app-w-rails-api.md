@@ -70,5 +70,8 @@ To test that he server was built correctly lets turn the server on with `$ rails
 
 You've officially setup a Rails API server and a React node server, now we have to get them talking to each other.
 
+
+
+
 ## Preparing for the Cross Origin Resource Request or CORS. ##
 
