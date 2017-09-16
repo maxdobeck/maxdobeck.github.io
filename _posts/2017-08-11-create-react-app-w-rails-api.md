@@ -74,4 +74,3 @@ You've officially setup a Rails API server and a React node server, now we have 
 
 
 ## Preparing for the Cross Origin Resource Request or CORS. ##
-
