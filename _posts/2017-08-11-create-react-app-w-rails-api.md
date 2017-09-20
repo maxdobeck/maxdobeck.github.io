@@ -95,23 +95,30 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
  end
 ```
 ## Adding the Ping Controller ##
-For our first API resource we'll build `/ping`.  The React server will "ping" the Rails server with a request for the Ping resource.  The Rails server should return a JSON message like, "Pong" or "Hello from the Rails server".  In practice this won't be useful but this request for a resource followed by a JSON response is going to be the typical flow of all resources.  Once we have the JSON object we can manipulate the data however we want with React.  We can test this easily at the command line with [curl](#) and once we like the response we'll just make an AJAX or Fetch request from React.
+For our first API resource we'll build `/ping`.  The React server will "ping" the Rails server with a request for the Ping resource.  The Rails server should return a JSON message like, "Pong" or "Hello from the Rails server".  In practice this won't be useful but this request for a resource followed by a JSON response is going to be the typical flow of all resources.  Once we have the JSON object we can manipulate the data however we want with React.  We can test this easily at the command line with [curl](https://curl.haxx.se/) and once we like the response we'll just make an AJAX or Fetch request from React.
 
-First lets add the Controller for the Rails server.  Using a little Rails magic we'll use the [generate](#) command to build a controller:
+First lets add the Controller for the Rails server.  Using a little Rails magic we'll use the [generate](http://guides.rubyonrails.org/command_line.html#rails-generate) command to build a controller:
 ```terminal
 $ rails generate controller Ping
 ```
-Or you can just add the ping.html file to thhe controllers directory.
 
->>>>>TODO
-???????????????????NAMESPACE?  OR SOMETHING ELSE???????????????  ALSO DO WE JUST WANT TO UPDATE THE APPLICATION CONTROLLER INSTEAD?????
+Lets modify our Routes after generating the controller:
+```ruby
+Rails.application.routes.draw do
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      match  'ping', to: 'ping#ping', via: [:get]
+    end
+  end
+end
+```
 
-Now we'll need to change the `namespace` that the `PingController` inherits from.  Or the ApplicationController.
+We'll want this route so we can version our API.  Maybe a month from now we want to phase out the /ping route but we want to still support it in Version 1 of the API.  So we'll just add `namespace :v2 ... ` to the routes and controllers!  We'll leave all our existing logic and build on top of it.  As it appears now our ping resource will be available by calling `www.localhost.com:3000/api/v1/ping`.
 
-## Gems We'll Need to Respond with JSON and to Serialize the JSON ##
 
 ## What goes in the Ping Controller And What Status Do We Return ##
 
+## Gems We'll Need to Respond with JSON and to Serialize the JSON ##
 
-## Sending Data Between the React and Rails Server ##
+## Requesting Data From React ##
 
