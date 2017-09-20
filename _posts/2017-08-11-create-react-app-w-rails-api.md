@@ -95,7 +95,23 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
  end
 ```
 ## Adding the Ping Controller ##
-For our first API resource we'll build /ping.  The React server will "ping" the Rails server with a request for the Ping resource.  The Rails server should return a JSON message like, "Pong" or "Hello from the Rails server".  In practice this won't be useful but this request for a resource followed by a JSON response is going to be the typical flow of all resources.
+For our first API resource we'll build `/ping`.  The React server will "ping" the Rails server with a request for the Ping resource.  The Rails server should return a JSON message like, "Pong" or "Hello from the Rails server".  In practice this won't be useful but this request for a resource followed by a JSON response is going to be the typical flow of all resources.  Once we have the JSON object we can manipulate the data however we want with React.  We can test this easily at the command line with [curl](#) and once we like the response we'll just make an AJAX or Fetch request from React.
+
+First lets add the Controller for the Rails server.  Using a little Rails magic we'll use the [generate](#) command to build a controller:
+```terminal
+$ rails generate controller Ping
+```
+Or you can just add the ping.html file to thhe controllers directory.
+
+>>>>>TODO
+???????????????????NAMESPACE?  OR SOMETHING ELSE???????????????  ALSO DO WE JUST WANT TO UPDATE THE APPLICATION CONTROLLER INSTEAD?????
+
+Now we'll need to change the `namespace` that the `PingController` inherits from.  Or the ApplicationController.
+
+## Gems We'll Need to Respond with JSON and to Serialize the JSON ##
+
+## What goes in the Ping Controller And What Status Do We Return ##
+
 
 ## Sending Data Between the React and Rails Server ##
 
