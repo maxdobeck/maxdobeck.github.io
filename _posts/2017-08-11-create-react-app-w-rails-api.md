@@ -117,6 +117,10 @@ We'll want this route so we can version our API.  Maybe a month from now we want
 
 
 ## What goes in the Ping Controller And What Status Do We Return ##
+First we'll need to match our routes that we previously defined.  Create the `api` then `api/v1` directories.  Then move the ping_controller.rb to the proper path so it looks like this: `../app/controllers/api/v1/ping_controller.rb`.
+
+
+You're most likely looking at something like the below in your Ping Controller
 
 ## Gems We'll Need to Respond with JSON and to Serialize the JSON ##
 
