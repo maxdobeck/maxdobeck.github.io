@@ -4,6 +4,8 @@ title: "creating this blog with jekyll"
 date: 2017-08-01
 ---
 
+TLDR; Give Jekyll a try.  Really good stuff.
+
 ## Jekyll ##
 [Jekyll](http://jekyllrb.com) is good.  Docs are decent, user guides are swell, overall not bad.  I used this [guide](http://jmcglone.com/guides/github-pages/) and it helped to get the file structure figured out.  Quick tip, just use the command `$jekyll serve` to get a local version up and running.  It will watch for changes by default so once you're done with the guide you can just mess around locally.  My advice is to pick a theme as well, don't waste a week getting all the pixels to line up.
 
@@ -17,4 +19,3 @@ Without Jekyll and Github pages I may not have started documenting my work.  Sig
 
 I no longer just work, and work, and work mindlessly for hours.  I take breaks and jot down what I just worked on for an hour.  I draw diagrams so I can refer back to them and write down what I was thinking.  I can now look back and review my thought process without a subjective memory telling me, "Yeah that was a really good job.  Keep doing that."  Now I can force myself to build things with documentation which I think results in the end product being more user friendly.  If I have to explain it to myself I should be able to explain it to someone else right?  
 
-TLDR; Give Jekyll a try.  Really good stuff.

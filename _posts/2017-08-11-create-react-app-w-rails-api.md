@@ -49,7 +49,13 @@ For example if we have an API that lets you make and modify hotel reservations a
 DELETE https://www.hotelApi.com/reservations/2017-08-25
 ```  
 
-The method of the request is `DELETE`, the hostname is `www.hotelApi.com`, and the path(resource or URI) is `/reservations/2017-08-25`.  These components makeup the request header that React will send to our API.  In response to this request the API could return a `true` or `false`, a confirmation, or an error saying this user doesn't have access to a protected resource (it would be chaos if anyone could delete anyone else's hotel reservations).  If you reference other modern APIs though the typical thing to do is to return a JSON message.  Since this is a `DELETE` operation  it will probably just be a simple confirmation so that the React application can say something like, "Successfully deleted!".
+Method:  `DELETE`
+
+Hostname:  `www.hotelApi.com`
+
+Path:  `/reservations/2017-08-25`  
+
+These components makeup the request header that React will send to our API.  In response to this request the API could return a `true` or `false`, a confirmation, or an error saying this user doesn't have access to a protected resource (it would be chaos if anyone could delete anyone else's hotel reservations).  If you reference other modern APIs though the typical thing to do is to return a JSON message.  Since this is a `DELETE` operation  it will probably just be a simple confirmation so that the React application can say something like, "Successfully deleted!".
 
 ## Generating an API ##
 The below assumes you have Rails 5 installed along with Postgres.  Refer to this guide by Digital Ocean for instructions to [install RVM, Rails, and Postgres](https://www.digitalocean.com/community/tutorials/how-to-setup-ruby-on-rails-with-postgres).  Lets build an API that can help us manage tickets submitted to the IT department.
@@ -69,7 +75,7 @@ To test that he server was built correctly lets turn the server on with `$ rails
 
 You've officially setup a Rails API server and a React node server, now we have to get them talking to each other.
 
-## Preparing for the Cross Origin Resource Request or CORS. ##
+## Preparing for the Cross Origin Resource Request (CORS). ##
 This is assuming you're using Rack for your're middleware.  Read more about [Rack-CORS here](https://github.com/cyu/rack-cors).
 
 
@@ -88,3 +94,8 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
    end
  end
 ```
+## Adding the Ping Controller ##
+For our first API resource we'll build /ping.  The React server will "ping" the Rails server with a request for the Ping resource.  The Rails server should return a JSON message like, "Pong" or "Hello from the Rails server".  In practice this won't be useful but this request for a resource followed by a JSON response is going to be the typical flow of all resources.
+
+## Sending Data Between the React and Rails Server ##
+
