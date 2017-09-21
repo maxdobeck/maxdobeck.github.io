@@ -67,7 +67,7 @@ Tip:
 `psql=> \du`  lists all the roles and their attributes
 
 
-```
+```terminal
 $ rails new HelpdeskApi --api --database=postgresql
 ```
 
@@ -104,6 +104,7 @@ $ rails generate controller Ping
 
 Lets modify our Routes after generating the controller:
 ```ruby
+#config/routes.rb
 Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
@@ -120,7 +121,13 @@ We'll want this route so we can version our API.  Maybe a month from now we want
 First we'll need to match our routes that we previously defined.  Create the `api` then `api/v1` directories.  Then move the ping_controller.rb to the proper path so it looks like this: `../app/controllers/api/v1/ping_controller.rb`.
 
 
-You're most likely looking at something like the below in your Ping Controller
+You're most likely looking at something like the below in your Ping Controller:
+```ruby
+#ping_controller.rb
+class PingController < ApplicationController
+end
+```
+
 
 ## Gems We'll Need to Respond with JSON and to Serialize the JSON ##
 
