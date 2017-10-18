@@ -3,8 +3,7 @@ layout: post
 title: "create-react-app w/ rails 5 --api"
 date: 2017-08-11
 ---
-# The Concept #
-## Abstract ##
+
 This is an alternative way of building web apps using an agnostic front end framework or client with a RESTful API on the application tier.  Essentially the front end is just delivered the data it needs, usually in the form of a JSON object, and the back end process simple discrete requests that alter the available resources.  From the viewpoint of the application there is no user state to capture beyond these moments that a network request is made to either the React server or the Rails server.
 
 ## Why Rails? ##
