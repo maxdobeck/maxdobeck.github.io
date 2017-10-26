@@ -9,3 +9,5 @@ kramdown:
 
 plugins:
   - rouge
+  - jekyll-sitemap
+
