@@ -10,4 +10,5 @@ kramdown:
 plugins:
   - rouge
   - jekyll-sitemap
+  - jekyll-seo-tag
 
