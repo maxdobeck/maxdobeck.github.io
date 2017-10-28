@@ -136,13 +136,32 @@ First we'll need to match our routes that we previously defined.  Create the `ap
 
 You're most likely looking at something like the below in your Ping Controller:
 ```ruby
-#ping_controller.rb
+#app/controllers/api/v1/ping_controller.rb
 class PingController < ApplicationController
 end
 ```
 
+We need to update our controller so that our namespaces match, we return a nice little message, add a `ping` action, and respond to JSON requests.
+
+```ruby
+#app/controllers/api/v1/ping_controller.rb
+class Api::V1::PingController < ApplicationController
+  respond_to :json
+  def ping
+    render json: { message: "Hello and welcome from the Rails Server!" }, status: :ok 
+  end
+end
+```
+
+You can now run the rails server in your terminal `$ rails s` and vist the URL in your browser: `0000:3000/api/v1/ping`.  You may get an error becuase you don't have all the proper Gems to serialize JSON data and execute respond_to directives in the controller but it is offically a URL you can visit!
 
 ## Gems We'll Need to Respond with JSON and to Serialize the JSON ##
+
+[Acitve Model Serializers](https://github.com/rails-api/active_model_serializers/tree/0-10-stable)
+
+[Responders](https://github.com/plataformatec/responders)
+
+Both of these gems will allow easy serializtion of JSON as well as a way to respond when a JSON request is sent to the Rails server.
 
 ## Requesting Data From React ##
 
