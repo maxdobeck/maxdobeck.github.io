@@ -8,7 +8,10 @@ date: 2017-08-01
 [Jekyll](http://jekyllrb.com) is good.  Docs are decent, user guides are swell, overall not bad.  I used this [guide](http://jmcglone.com/guides/github-pages/) and it helped to get the file structure figured out.  Quick tip, just use the command `$jekyll serve` to get a local version up and running.  Jekyll will watch for changes by default so once you're done with the guide you can just mess around locally.  My advice is to pick a theme and run with it, don't waste a week getting all the pixels to line up.
 
 ## Command Line Cheat Sheet ##
-`$ jeyll serve` starts a local server so you can mess with your site real time
+`$ jeyll serve` - starts a local server so you can mess with your site real time
+
+`YEAR-MONTH-DAY-title.MARKUP` - format for a new post file under the `_posts` directory.
+
 
 ## Applications at Work ##
 At work we're constantly moving knowledge around, basic, essential, institutional knowledge that keeps a company running.  Without it, without certain people, we'd fall apart and take weeks or months to recover.  Even today I'm discovering things that my coworkers knew but didn't know that I needed to know.  If I could back a single improvement it would be to give Jekyll access to my whole team and dedicate 30 minutes a week to building a single subject internal-use-only guide.  With that guide we could instantly ease any concerns about who was on call when or who was available to help another team with an issue.  If we acted as gatekeepers for our knowledge base with the other departments we could collect and assist with every layer of the architecture.

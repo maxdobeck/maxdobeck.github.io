@@ -4,7 +4,11 @@ title: "create-react-app w/ rails 5 --api"
 date: 2017-08-11
 ---
 
-This is an alternative way of building web apps using an agnostic front end framework or client with a RESTful API on the application tier.  Essentially the front end is just delivered the data it needs, usually in the form of a JSON object, and the back end process simple discrete requests that alter the available resources.  From the viewpoint of the application there is no user state to capture beyond these moments that a network request is made to either the React server or the Rails server.
+This is a discussion of a trendy way to build web apps using two componets: an agnostic frontend with an API interface to the backend.  Essentially the front end is just an empty shell asking for the data it needs, usually in the form of a JSON object, and the back end responds to user requests.  From the viewpoint of the application there is no state beyond the last HTTP request.  Theoretically this should be a simpler way to build easily distrubtable web applications.
+
+Lets put this to the test by trying to build a simple React app that sends requests to a Rails API only server.  The end result should be pretty simple, you visit the server hosting your React app and get a message from the Rails server. Something like below:
+
+![A greetings from the Rails API server!]({{ "/assets/Screenshot from 2017-10-28 16-02-36.png" | absolute_url }})
 
 ## Why Rails? ##
 [The official Rails doc says it best](http://edgeguides.rubyonrails.org/api_app.html).
@@ -14,7 +18,7 @@ First off I know it and I like it.  I like Ruby and Rails even though the *magic
 I can safely say that if you're building an API for the 2nd or 3rd time you'll *REALLY* start to feel the deja vu.  The business logic and names of resources are really the only things that change.  Beyond that you're always going to be putting up the same old skeleton and pumping life into it just like you did last time.  So why not use Rails?
 
 
-## What does this look like? ##
+## What does splitting the frontend and backend look like? ##
 React sits on its own server or server farm and responds to users as they connect.  Whenever the user does something like a Save or Update to a resource an HTTP request gets sent to the API server.  The API processes the client request, interacts with some resource, and sends the response back to the source.  There's no need to store the Users session or state on the API server because this is a RESTful architecture that is stateless by design.
 
 We may want to use a queue or cache to persist the user's state on the React front end so that they can pick up where they left off if they're interrupted but beyond that the API just exists and responds to requests.  When we use the word stateless what we mean is that no single HTTP request from the client needs to know about any previous request.  All necessary data is contained within the HTTP request: authentication for protected resources, the location of the resource, and what we want to do with it.
@@ -94,9 +98,19 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
  end
 ```
 ## Adding the Ping Controller ##
-For our first API resource we'll build `/ping`.  The React server will "ping" the Rails server with a request for the Ping resource.  The Rails server should return a JSON message like, "Pong" or "Hello from the Rails server".  In practice this won't be useful but this request for a resource followed by a JSON response is going to be the typical flow of all resources.  Once we have the JSON object we can manipulate the data however we want with React.  We can test this easily at the command line with [curl](https://curl.haxx.se/) and once we like the response we'll just make an AJAX or Fetch request from React.
+For our first API resource we'll build `/ping`.  The React server will "ping" the Rails server with a request for the Ping resource.  The Rails server should return a JSON message like, "Pong" or "Hello from the Rails server".  In practice this won't be useful but this request for a resource followed by a JSON response is going to be the typical flow of all requests.  Once we have the JSON object we can manipulate the data however we want with React.  We can test this easily at the command line with [curl](https://curl.haxx.se/) and once we like the response we'll just make an AJAX or Fetch request from React.
 
-First lets add the Controller for the Rails server.  Using a little Rails magic we'll use the [generate](http://guides.rubyonrails.org/command_line.html#rails-generate) command to build a controller:
+Here's an example of curl command line output when we make a request to the locally running API server:
+![Ping-API-Example]({{ "/assets/ping failure and success example.png" | absolute_url }})
+You can see the first test passed and returned a HTTP 200 response.  The second test was made after the server was shutdown so we didn't get a response to our /ping request.
+
+Later when we add a custom JSON message we should be able to visit the URL in a browser and see an actul text response, not just an HTTP response:
+![Ping-API-Message-Example]({{ "/assets/heroku rails sever working.png" | absolute_url }})
+
+
+
+
+The first step is to add the Controller via the Rails generator.  Using a little Rails magic we'll use the [generate](http://guides.rubyonrails.org/command_line.html#rails-generate) command to build a controller:
 ```terminal
 $ rails generate controller Ping
 ```
