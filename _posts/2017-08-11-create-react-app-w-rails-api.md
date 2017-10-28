@@ -163,5 +163,5 @@ You can now run the rails server in your terminal `$ rails s` and vist the URL i
 
 Both of these gems will allow easy serializtion of JSON as well as a way to respond when a JSON request is sent to the Rails server.
 
-## Requesting Data From React ##
+## Issuing an API Call from React ##
 
