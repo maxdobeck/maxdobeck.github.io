@@ -165,3 +165,27 @@ Both of these gems will allow easy serializtion of JSON as well as a way to resp
 
 ## Issuing an API Call from React ##
 
+Once you're done following your favorite React or create-react-app tutorial you can just add the below snippet to the `componentDidMount()` and `constructor()` functions.  This will make the ping API call as soon as your React app loads in the browser.
+
+```javascript
+constructor() {
+    super();
+    this.state={
+      ping: null,
+    }
+  }
+  
+  componentDidMount() {
+    var pingURL = "/api/v1/ping";
+    fetch(pingURL)
+    .then((response) => response.json())
+    .then((json) => this.setState({ ping: json.message }));
+  }
+```
+
+You should now be able to follow the above guidelines and make API calls to your backend server!
+
+## Closing Thoughts ##
+I didn't like this type of architectural approach from a workflow perspective.  If I was not working alone this would be much, much simpler. I would spin up my frontend OR backend dev environment and just start working in that dedicated environment.  Constantly switching, mentally and physically, between various screens, servers, and terminals wore me out quickly.
+
+This is an excellent approach if your businenss needs demand a distributed application.  But if there is no direct need I would have to recommend to the tried and true monolithic approach.
