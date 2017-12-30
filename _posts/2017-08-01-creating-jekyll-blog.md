@@ -10,7 +10,7 @@ date: 2017-08-01
 ## Command Line Cheat Sheet ##
 `$ jekyll serve` - starts a local server so you can mess with your site real time
 
-##Edit
+## Edit 2017-12-29
 `$ jekyll serve` has started returning this:
 
 ```terminal
