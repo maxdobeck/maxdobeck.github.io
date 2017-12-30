@@ -9,7 +9,9 @@ date: 2017-08-01
 
 ## Command Line Cheat Sheet ##
 `$ jekyll serve` - starts a local server so you can mess with your site real time
-Edit: `$ jekyll serve` has started returning this:
+
+##Edit
+`$ jekyll serve` has started returning this:
 
 ```terminal
 rubygems.rb:291:in `find_spec_for_exe': can't find gem jekyll (>= 0.a) with executable jekyll (Gem::GemNotFoundException)
