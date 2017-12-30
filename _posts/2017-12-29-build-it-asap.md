@@ -4,7 +4,9 @@ title: "Build it ASAP"
 date: 2017-12-29
 ---
 
-I like to listen to music while I'm working or occasionally just as background noise.  Typically I bookmark any songs I like as they are all available through common platforms like YouTube or Soundcloud.  This has led to a large list of bookmarks and I built an application that makes it easier for me listen to music while I'm working.  Essentially the bookmark bar folders appear on the far left column, when you select one it shows all child bookmarks inside it.
+When I program in my spare time I often listen to music.  Much of the music is sourced across a variety of hosting platforms and media sharing waterholes so for ease of access I bookmark each song in one central folder.  This has led to a large list of bookmarks spread across platforms like Soundcloud and Youtube.
+
+To centralize my listening experience I used Electron to build a giant queue that simply plays every song in the list.  I threw in a search bar and some controls and voila I can get to any spot in the list quickly!  The below image is the app running in the background.
 
 ![local-music-player]({{ "/assets/local-music-player-working.png" }})
 
