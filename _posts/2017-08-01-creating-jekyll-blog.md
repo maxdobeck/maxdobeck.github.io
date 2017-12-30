@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "creating this blog with jekyll"
+title: "Creating this blog with jekyll"
 date: 2017-08-01
 ---
 
@@ -8,7 +8,13 @@ date: 2017-08-01
 [Jekyll](http://jekyllrb.com) is good.  Docs are decent, user guides are swell, overall not bad.  I used this [guide](http://jmcglone.com/guides/github-pages/) and it helped to get the file structure figured out.  Quick tip, just use the command `$jekyll serve` to get a local version up and running.  Jekyll will watch for changes by default so once you're done with the guide you can just mess around locally.  My advice is to pick a theme and run with it, don't waste a week getting all the pixels to line up.
 
 ## Command Line Cheat Sheet ##
-`$ jeyll serve` - starts a local server so you can mess with your site real time
+`$ jekyll serve` - starts a local server so you can mess with your site real time
+Edit: `$ jekyll serve` has started returning this:
+
+```terminal
+rubygems.rb:291:in `find_spec_for_exe': can't find gem jekyll (>= 0.a) with executable jekyll (Gem::GemNotFoundException)
+```
+As a solution I now run: `bundle exec jekyll serve`.  Further reading at [this issue](https://github.com/jekyll/jekyll/issues/6510) on github.
 
 `YEAR-MONTH-DAY-title.MARKUP` - format for a new post file under the `_posts` directory.
 
